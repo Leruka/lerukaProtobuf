@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package leruka;
+
+option java_package = "com.leruka.protobuf";
+
+message RequestLogin { // The request to log in on the server
+    string name = 1;
+    string password = 2;
+}
+
+message RequestRegister { // The request to register on the server
+    string name = 1;
+    string password = 2;
+}
+
+message ResponseLogin { // The response when the user has tried to log in on the server
+    bool success = 1;
+    string sessionID = 2;
+    repeated uint32 errorCode = 3 [packed=true];
+}
+
+message ResponseRegister{ // The response when the user has tried to register on the server
+    bool success = 1;
+    ResponseLogin login = 2;
+    repeated uint32 errorCode = 3 [packed=true];
+}

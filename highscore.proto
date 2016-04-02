@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package leruka;
+
+option java_package = "com.leruka.protobuf";
+
+message RequestGlobalScores {
+    string levelName = 1;
+    uint64 fromRank = 2;
+    uint64 toRank = 3;
+}
+
+message RequestPushScore {
+    string sessionID = 1;
+    string levelName = 2;
+}
+
+message ResponseGlobalScores {
+    string levelName = 1;
+    repeated Score scores = 2;
+}
+
+message Score {
+    string userName = 1;
+    uint64 rank = 2;
+    uint64 score = 3;
+}
