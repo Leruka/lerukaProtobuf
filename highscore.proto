@@ -21,7 +21,7 @@ message ResponseScores {
     bool success = 1;
     string levelName = 2;
     repeated Score scores = 3;
-    repeated ErrorCode errorCodes = 4;
+    repeated ErrorCode errorCode = 4;
 }
 
 message Score {

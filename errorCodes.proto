@@ -13,14 +13,16 @@ enum ErrorCode {
 
     // Register
     REGISTER_NAME_USED = 201;
-    REGISTER_NAME_INVALID = 202;
-    REGISTER_PASS_INVALID = 203;
 
     // Login
     LOGIN_NAME_UNKNOWN = 301;
-    LOGIN_PASS_INVALID = 302;
+    LOGIN_PASS_WRONG = 302;
+
+    // User
+    USER_NAME_INVALID = 401;
+    USER_PASS_INVALID = 402;
 
     // Database
-    DB_UNKNOWN_ERROR = 401;
+    DB_UNKNOWN_ERROR = 501;
 
 }

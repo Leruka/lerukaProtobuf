@@ -19,11 +19,11 @@ message RequestRegister { // The request to register on the server
 message ResponseLogin { // The response when the user has tried to log in on the server
     bool success = 1;
     string sessionID = 2;
-    repeated ErrorCode errorCodes = 3;
+    repeated ErrorCode errorCode = 3;
 }
 
 message ResponseRegister{ // The response when the user has tried to register on the server
     bool success = 1;
     ResponseLogin login = 2;
-    repeated ErrorCode errorCodes = 3;
+    repeated ErrorCode errorCode = 3;
 }
