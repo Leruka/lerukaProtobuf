@@ -4,6 +4,8 @@ package leruka;
 
 option java_package = "com.leruka.protobuf";
 
+import "errorCodes.proto";
+
 message RequestGlobalScores {
     string levelName = 1;
     uint64 fromRank = 2;
@@ -16,8 +18,10 @@ message RequestPrivateScore {
 }
 
 message ResponseScores {
-    string levelName = 1;
-    repeated Score scores = 2;
+    bool success = 1;
+    string levelName = 2;
+    repeated Score scores = 3;
+    repeated ErrorCode errorCodes = 4;
 }
 
 message Score {

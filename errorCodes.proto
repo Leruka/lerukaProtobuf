@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package leruka;
+
+option java_package = "com.leruka.protobuf";
+
+enum ErrorCode {
+
+    UNKNOWN = 0;
+
+    // Request
+    REQUEST_WRONG_CONTENT_TYPE = 101;
+
+    // Register
+    REGISTER_NAME_USED = 201;
+    REGISTER_NAME_INVALID = 202;
+    REGISTER_PASS_INVALID = 203;
+
+    // Login
+    LOGIN_NAME_UNKNOWN = 301;
+    LOGIN_PASS_INVALID = 302;
+
+    // Database
+    DB_UNKNOWN_ERROR = 401;
+
+}
