@@ -16,6 +16,12 @@ message RequestRegister { // The request to register on the server
     string password = 2;
 }
 
+message RequestChangeSettings { // The request to change setting on the server
+    string sessionID = 1;
+    string name = 2;
+    string password = 3;
+}
+
 message ResponseLogin { // The response when the user has tried to log in on the server
     bool success = 1;
     string sessionID = 2;
@@ -26,4 +32,9 @@ message ResponseRegister{ // The response when the user has tried to register on
     bool success = 1;
     ResponseLogin login = 2;
     repeated ErrorCode errorCode = 3;
+}
+
+message ResponseChangeSettings { // The response when the user has tried to change settings on the server
+    bool success = 1;
+    repeated ErrorCode errorCode = 2;
 }
