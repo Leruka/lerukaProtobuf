@@ -18,8 +18,9 @@ message RequestRegister { // The request to register on the server
 
 message RequestChangeSettings { // The request to change setting on the server
     string sessionID = 1;
-    string name = 2;
-    string password = 3;
+    string newName = 2;
+    string newPassword = 3;
+    string oldPassword = 4;
 }
 
 message ResponseLogin { // The response when the user has tried to log in on the server
