@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package leruka;
+
+option java_package = "com.leruka.protobuf";
+
+import "errorCodes.proto";
+
+
+message RequestRateLevel {
+    string sessionID = 1;
+    string levelName = 2;
+}
+
+message ResponseRateLevel {
+    bool success = 1;
+    repeated ErrorCode errorCode = 4;
+}
