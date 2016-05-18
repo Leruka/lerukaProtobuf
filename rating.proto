@@ -10,9 +10,11 @@ import "errorCodes.proto";
 message RequestRateLevel {
     string sessionID = 1;
     string levelName = 2;
+    double rating = 3;
 }
 
 message ResponseRateLevel {
     bool success = 1;
+    repeated double rating = 2;
     repeated ErrorCode errorCode = 4;
 }
