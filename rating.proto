@@ -6,15 +6,27 @@ option java_package = "com.leruka.protobuf";
 
 import "errorCodes.proto";
 
+message LevelRating {
+    uint32 levelID = 1;
+    uint32 rating = 2;
+}
 
 message RequestRateLevel {
     string sessionID = 1;
-    string levelName = 2;
-    double rating = 3;
+    LevelRating rating = 2;
 }
 
 message ResponseRateLevel {
     bool success = 1;
-    repeated double rating = 2;
-    repeated ErrorCode errorCode = 4;
+    repeated ErrorCode errorCode = 2;
+}
+
+message RequestGetRating {
+    repeated uint32 levelID = 1;
+}
+
+message ResponseGetRating {
+    bool success = 1;
+    repeated LevelRating rating = 2;
+    repeated ErrorCode errorCode = 3;
 }
