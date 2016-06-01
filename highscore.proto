@@ -17,6 +17,11 @@ message RequestPrivateScore {
     string levelName = 2;
 }
 
+message RequestPushScore {
+    string sessionID = 1;
+    uint64 score = 2;
+}
+
 message ResponseScores {
     bool success = 1;
     string levelName = 2;
